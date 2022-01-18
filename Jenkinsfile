@@ -1,4 +1,4 @@
-import com.demo.util.checkoutSCM;
+
 pipeline {
     agent any
     
