@@ -4,8 +4,8 @@ pipeline {
     
     environment 
             {
-                BRANCH = env.BRANCH
-                REPO = env.REPO
+                BRANCH = 'master'
+                REPO = 'hello-world-1'
             }
    /* parameters {
         choice {
@@ -31,7 +31,7 @@ pipeline {
                 echo "Checkout is completed!"
                 }
             }
-        stage ('buikd code') {
+        stage ('build code') {
             steps {
                 echo "build a java code using mvn"
                 sh '''
