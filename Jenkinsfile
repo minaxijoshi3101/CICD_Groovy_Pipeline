@@ -15,8 +15,8 @@ pipeline {
         }
     }*/
     tools{
-        jdk ''
-        maven ''
+        jdk 'openjdk-1.11.0'
+        maven 'maven'
     }
     stages {
         stage('checkout SCM') {
