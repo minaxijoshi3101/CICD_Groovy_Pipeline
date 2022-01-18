@@ -5,13 +5,13 @@ pipeline {
     BRANCH = env.BRANCH
     REPO = env.REPO
   }
-    parameters {
+   /* parameters {
         choice {
                 name: 'BuildType',
                 choices: 'SNAPSHOT\nRELEASE',
                 description: 'choose the build type'
         }
-    }
+    }*/
     tools{
         jdk ''
         maven ''
