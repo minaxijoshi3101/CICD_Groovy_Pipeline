@@ -1,4 +1,4 @@
-def SCM_URL=""
+def SCM_URL
 pipeline {
     agent any
     
