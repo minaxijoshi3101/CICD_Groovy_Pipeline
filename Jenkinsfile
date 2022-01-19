@@ -30,7 +30,7 @@ pipeline {
                 echo "Code checkout from SCM Repo ${SCM_URL}"
                 sh ''' 
                 rm -rf ${REPO}
-                git clone --single-branch --branch ${BRANCH} $SCM_URL
+                git clone --single-branch --branch ${BRANCH} "$SCM_URL"
                 ''' 
                 echo "Checkout is completed!"
                 }
