@@ -1,5 +1,5 @@
-def SCM_URL
 pipeline {
+    def SCM_URL
     agent any
     
     environment 
