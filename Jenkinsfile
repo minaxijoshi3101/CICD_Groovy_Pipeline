@@ -24,7 +24,7 @@ pipeline {
         stage('checkout SCM') {
             steps { 
                 echo 'Step to checkout the code from github'
-                def _SCM_URL="git@github.com:"+$GIT_GROUP+"/"+$REPO+".git";
+                String SCM_URL="git@github.com:"+$GIT_GROUP+"/"+$REPO+".git";
                 echo "Code checkout from SCM Repo"
                 sh ''' 
                 rm -rf ${REPO}
