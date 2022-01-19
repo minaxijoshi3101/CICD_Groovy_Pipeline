@@ -26,7 +26,7 @@ pipeline {
                 echo 'Step to checkout the code from github'
                 script {
                     SCM_URL='git@github.com:'+env.GIT_GROUP+'/'+env.REPO+'.git';
-                     }
+                    
                 echo "Code checkout from SCM Repo ${SCM_URL}"
                 sh ''' 
                 rm -rf ${REPO}
@@ -34,6 +34,7 @@ pipeline {
                 ''' 
                 echo "Checkout is completed!"
                 }
+                 }
             }
         stage ('build code') {
             steps {
