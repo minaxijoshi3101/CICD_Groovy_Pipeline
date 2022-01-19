@@ -1,5 +1,5 @@
 pipeline {
-    def SCM_URL
+    
     agent any
     
     environment 
@@ -7,7 +7,7 @@ pipeline {
                 BRANCH = 'master'
                 REPO = 'hello-world-1'
                 GIT_GROUP='minaxijoshi3101'
-                
+                SCM_URL=''
             }
    /* parameters {
         choice {
