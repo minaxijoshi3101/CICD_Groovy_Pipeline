@@ -1,4 +1,4 @@
-
+def SCM_URL=""
 pipeline {
     agent any
     
@@ -24,7 +24,7 @@ pipeline {
         stage('checkout SCM') {
             steps { 
                 echo 'Step to checkout the code from github'
-                String SCM_URL='git@github.com:'+$GIT_GROUP+'/'+$REPO+'.git';
+                SCM_URL='git@github.com:'+$GIT_GROUP+'/'+$REPO+'.git';
                 echo "Code checkout from SCM Repo"
                 sh ''' 
                 rm -rf ${REPO}
