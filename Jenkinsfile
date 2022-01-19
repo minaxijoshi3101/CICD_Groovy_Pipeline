@@ -27,7 +27,7 @@ pipeline {
                 script {
                 SCM_URL='git@github.com:'+$GIT_GROUP+'/'+$REPO+'.git';
                      }
-                echo "Code checkout from SCM Repo"
+                echo "Code checkout from SCM Repo"+$SCM_URL
                 sh ''' 
                 rm -rf ${REPO}
                 git clone --single-branch --branch ${BRANCH} ${SCM_URL}
