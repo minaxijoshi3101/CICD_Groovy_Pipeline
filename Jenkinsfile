@@ -39,9 +39,10 @@ pipeline {
         stage ('build code') {
             steps {
                 echo "build a java code using mvn"
-                sh '''
+                sh """
+                cd ${REPO}
                 mvn clean install package
-                '''
+                """
             }
             
         }
