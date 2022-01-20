@@ -56,5 +56,15 @@ pipeline {
                 '''
             }
         }
+        stage("Code analysis")
+        {
+            steps
+            {
+                echo "static code analysis through SonarQube"
+                //sonarqube uses sonar scanner and postgresql
+                sh """
+                """
+            }
+        }
       }
 }
