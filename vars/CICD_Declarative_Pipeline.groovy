@@ -25,7 +25,8 @@ pipeline {
         stage('checkout SCM') {
             steps { 
                 echo 'Step to checkout the code from github'
-                new checkoutSCM().call(pipelineParams)
+                def example = load com/poc/util.checkoutSCM.groovy
+                example.call()
                  }
             }
         stage ('build code') {
