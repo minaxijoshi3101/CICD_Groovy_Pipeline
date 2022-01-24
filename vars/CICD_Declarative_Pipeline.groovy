@@ -28,11 +28,8 @@ pipeline {
                 echo 'Step to checkout the code from github'
                 sh """
                 cd $WORKSPACE
-                echo "PWD $PWD"
-                cd ..
-                echo "PWD $PWD"
                 """
-                def example = load "/com/poc/util/checkoutSCM.groovy"
+                def example = load "com/poc/util/checkoutSCM.groovy"
                 example.call()
                 }
                  }
