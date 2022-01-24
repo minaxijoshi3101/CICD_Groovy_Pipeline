@@ -27,6 +27,7 @@ pipeline {
                 script{
                 echo 'Step to checkout the code from github'
                 sh """
+                cd $WORKSPACE
                 echo "PWD $PWD"
                 cd ..
                 echo "PWD $PWD"
