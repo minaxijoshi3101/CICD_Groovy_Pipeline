@@ -2,13 +2,13 @@ pipeline {
     
     agent any
     
-    environment 
+    /* environment 
             {
                 BRANCH = 'master'
                 REPO = 'hello-world-1'
                 GIT_GROUP='minaxijoshi3101'
                 SCM_URL=''
-            }
+            } */
    /* parameters {
         choice {
                 name: 'BuildType',
