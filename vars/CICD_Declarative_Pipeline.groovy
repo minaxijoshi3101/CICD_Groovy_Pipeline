@@ -29,7 +29,7 @@ pipeline {
                 sh """
                 cd $WORKSPACE
                 """
-                def example = load "com/poc/util/checkoutSCM.groovy"
+                def example = load "CICD_Groovy_Pipeline/com/poc/util/checkoutSCM.groovy"
                 example.call()
                 }
                  }
