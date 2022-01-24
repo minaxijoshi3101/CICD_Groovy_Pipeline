@@ -26,7 +26,7 @@ pipeline {
             steps { 
                 script{
                 echo 'Step to checkout the code from github'
-                def example = load com/poc/util.checkoutSCM.groovy
+                def example = load com/poc/util/checkoutSCM.groovy
                 example.call()
                 }
                  }
