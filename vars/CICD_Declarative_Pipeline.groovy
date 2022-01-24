@@ -29,8 +29,8 @@ pipeline {
                 sh """
                 cd $WORKSPACE
                 """
-                def example = load "com/poc/util/checkoutSCM.groovy"
-                example.call()
+                def runner = load pwd() + '/com/poc/util/checkoutSCM.groovy'
+                runner.call()
                 }
                  }
             }
