@@ -1,4 +1,4 @@
-def call() {
+def otmath() {
 
       SCM_URL='git@github.com:'+env.GIT_GROUP+'/'+env.REPO+'.git';
       echo "Code checkout from SCM Repo ${SCM_URL}"
