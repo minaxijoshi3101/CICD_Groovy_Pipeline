@@ -30,7 +30,7 @@ pipeline {
                 cd $WORKSPACE
                 """
                 def runner = load pwd() + '/com/poc/util/checkoutSCM.groovy'
-                runner.call()
+                runner.otmath()
                 }
                  }
             }
