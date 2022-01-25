@@ -1,4 +1,5 @@
-import com.poc.util
+import com.poc.util;
+
 def call(Map pipelineParams)
 {
 pipeline {
