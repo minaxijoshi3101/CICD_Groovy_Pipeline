@@ -1,3 +1,5 @@
+package com.poc.util
+
 def call(Map pipelineParams) {
 
       SCM_URL='git@github.com:'+pipelineParams.GIT_GROUP+'/'+pipelineParams.REPO+'.git';
