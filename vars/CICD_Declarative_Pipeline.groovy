@@ -1,6 +1,8 @@
 import com.poc.util.checkoutSCM;
 def call(Map pipelineParams)
 {
+    env.BRANCH = pipelineParams.BRANCH
+    env.REPO = pipelineParams.REPO
 pipeline {
     node(){
         stage("checkout SCM") 
