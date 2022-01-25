@@ -1,6 +1,6 @@
-def otmath() {
+def call(Map pipelineParams) {
 
-      SCM_URL='git@github.com:'+env.GIT_GROUP+'/'+env.REPO+'.git';
+      SCM_URL='git@github.com:'+pipelineParams.GIT_GROUP+'/'+pipelineParams.REPO+'.git';
       echo "Code checkout from SCM Repo ${SCM_URL}"
       sh """
       rm -rf ${REPO}
