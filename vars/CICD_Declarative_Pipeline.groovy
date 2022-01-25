@@ -13,7 +13,7 @@ pipeline {
             """
             new checkoutSCM().call(pipelineParams)
         }       
-       /* stage ('build code') {
+       stage ('build code') {
             steps {
                 echo "build a java code using mvn"
                 sh """
@@ -33,7 +33,7 @@ pipeline {
                 """
             }
         }
-        */
+        
       }
 }
 }
