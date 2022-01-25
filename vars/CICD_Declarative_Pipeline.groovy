@@ -1,4 +1,4 @@
-import com.poc.util;
+import com.poc.util.checkoutSCM;
 
 def call(Map pipelineParams)
 {
