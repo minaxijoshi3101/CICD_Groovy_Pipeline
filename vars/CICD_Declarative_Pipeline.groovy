@@ -1,4 +1,6 @@
-import com.poc.util.*;
+import com.poc.util
+def call(Map pipelineParams)
+{
 pipeline {
     
     agent any
@@ -29,8 +31,7 @@ pipeline {
                 sh """
                 cd $WORKSPACE
                 """
-                def runner = load pwd() + '/com/poc/util/checkoutSCM.groovy'
-                runner.otmath()
+                new checkoutSCM().call(pipelineParams)
                 }
                  }
             }
@@ -55,4 +56,5 @@ pipeline {
             }
         }
       }
+}
 }
