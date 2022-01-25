@@ -24,18 +24,16 @@ pipeline {
         jdk 'openjdk-1.11.0'
         maven 'maven'
     }
-    stages {
+    
         stage('checkout SCM') {
-            steps { 
-                script{
+            
                 echo 'Step to checkout the code from github'
                 sh """
                 cd $WORKSPACE
                 """
                 new checkoutSCM().call(pipelineParams)
                 }
-                 }
-            }
+                
         stage ('build code') {
             steps {
                 echo "build a java code using mvn"
@@ -57,5 +55,5 @@ pipeline {
             }
         }
       }
-}
+
 }
