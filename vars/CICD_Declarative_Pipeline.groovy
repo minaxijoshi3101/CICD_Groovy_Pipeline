@@ -1,7 +1,5 @@
 import com.poc.util.checkoutSCM;
 
-def call(Map pipelineParams)
-{
 pipeline {
     node(){
         stage("checkout SCM") 
@@ -34,5 +32,4 @@ pipeline {
         }
         */
       }
-}
 }
