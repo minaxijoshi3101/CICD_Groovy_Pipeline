@@ -5,8 +5,8 @@ def call(Map pipelineParams) {
       SCM_URL='git@github.com:'+pipelineParams.GIT_GROUP+'/'+pipelineParams.REPO+'.git';
       echo "Code checkout from SCM Repo ${SCM_URL}"
       sh """
-      rm -rf pipelineParams.REPO
-      git clone --single-branch --branch pipelineParams.BRANCH pipelineParams.REPO.SCM_URL
+      rm -rf ${REPO}
+      git clone --single-branch --branch ${BRANCH} ${SCM_URL}
       """ 
       echo "Checkout is completed!"
 
