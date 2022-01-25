@@ -3,34 +3,15 @@ import com.poc.util.checkoutSCM;
 def call(Map pipelineParams)
 {
 pipeline {
-    
-    /* environment 
-            {
-                BRANCH = 'master'
-                REPO = 'hello-world-1'
-                GIT_GROUP='minaxijoshi3101'
-                SCM_URL=''
-            } */
-   /* parameters {
-        choice {
-                name: 'BuildType',
-                choices: 'SNAPSHOT\nRELEASE',
-                description: 'choose the build type'
-        }
-    }*/
-    tools{
-        jdk 'openjdk-1.11.0'
-        maven 'maven'
-    }
     node(){
-        stage('checkout SCM') {
-                echo 'Step to checkout the code from github'
-                sh """
-                cd $WORKSPACE
-                """
-                new checkoutSCM().call(pipelineParams)
-                }
-                
+        stage("checkout SCM") 
+        {
+            echo 'Step to checkout the code from github'
+            sh """
+            cd $WORKSPACE
+            """
+            new checkoutSCM().call(pipelineParams)
+        }       
        /* stage ('build code') {
             steps {
                 echo "build a java code using mvn"
