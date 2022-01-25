@@ -4,8 +4,6 @@ def call(Map pipelineParams)
 {
 pipeline {
     
-    agent any
-    
     /* environment 
             {
                 BRANCH = 'master'
@@ -24,9 +22,8 @@ pipeline {
         jdk 'openjdk-1.11.0'
         maven 'maven'
     }
-    
+    node(){
         stage('checkout SCM') {
-            
                 echo 'Step to checkout the code from github'
                 sh """
                 cd $WORKSPACE
@@ -34,7 +31,7 @@ pipeline {
                 new checkoutSCM().call(pipelineParams)
                 }
                 
-        stage ('build code') {
+       /* stage ('build code') {
             steps {
                 echo "build a java code using mvn"
                 sh """
@@ -54,6 +51,7 @@ pipeline {
                 """
             }
         }
+        */
       }
-
+}
 }
