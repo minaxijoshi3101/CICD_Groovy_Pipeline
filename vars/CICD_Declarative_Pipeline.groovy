@@ -1,4 +1,5 @@
 import com.poc.util.checkoutSCM;
+package com.poc.util.buildCode;
 def call(Map pipelineParams)
 {
     env.BRANCH = pipelineParams.BRANCH
@@ -16,10 +17,7 @@ def call(Map pipelineParams)
            stage ('build code') 
             {    
                     echo "build a java code using mvn"
-                    sh """
-                    cd ${REPO}
-                    mvn clean install package
-                    """    
+                    new buildCode().call(pipelineParams)  
             }
             stage ("deploy")
             {
