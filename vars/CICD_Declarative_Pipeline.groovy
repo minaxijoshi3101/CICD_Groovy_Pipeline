@@ -18,7 +18,7 @@ def call(Map pipelineParams)
            stage ('build code and create docker image') 
             {    
                     echo "build a java code using mvn"
-                    new buildCompileApp().call(pipelineParams)  
+                    new buildCode().call(pipelineParams)  
             }
             
             stage ("deploy")
