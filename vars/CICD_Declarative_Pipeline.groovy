@@ -1,11 +1,12 @@
 import com.poc.util.checkoutSCM;
 import com.poc.util.pushImageDR;
 import com.poc.util.buildCode;
+
 def call(Map pipelineParams)
 {
     env.BRANCH = pipelineParams.BRANCH
     env.REPO = pipelineParams.REPO
-    env.REGISTRY = pipeline.REGISTRY 
+    
     pipeline {
         node(){
             stage("checkout SCM") 
