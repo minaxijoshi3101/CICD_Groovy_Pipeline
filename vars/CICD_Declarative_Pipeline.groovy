@@ -18,7 +18,7 @@ def call(Map pipelineParams)
            stage ('build code') 
             {    
                     echo "build a java code using mvn"
-                    new buildCode().call(pipelineParams)  
+                    new buildCompileApp().call(pipelineParams)  
             }
             stage ("deploy")
             {
