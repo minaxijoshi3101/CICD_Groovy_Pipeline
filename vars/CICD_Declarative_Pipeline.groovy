@@ -20,7 +20,11 @@ def call(Map pipelineParams)
                     echo "build a java code using mvn"
                     new buildCode().call(pipelineParams)  
             }
-            
+            stage ('Push docker image to docker-registry')
+            {
+                echo "push docker image to ECR-docker registry"
+                new pushImageDR().call(pipelineParams)
+            }
             stage ("deploy")
             {
                     echo "deploy war to tomcat app server"
