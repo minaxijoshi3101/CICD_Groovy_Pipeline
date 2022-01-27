@@ -15,11 +15,12 @@ def call(Map pipelineParams)
                 """
                 new checkoutSCM().call(pipelineParams)
             }       
-           stage ('build code') 
+           stage ('build code and create docker image') 
             {    
                     echo "build a java code using mvn"
                     new buildCompileApp().call(pipelineParams)  
             }
+            
             stage ("deploy")
             {
                     echo "deploy war to tomcat app server"
