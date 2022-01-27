@@ -1,5 +1,6 @@
 import com.poc.util.checkoutSCM;
-package com.poc.util.buildCode;
+import com.poc.util.pushImageDR;
+import com.poc.util.buildCode;
 def call(Map pipelineParams)
 {
     env.BRANCH = pipelineParams.BRANCH
