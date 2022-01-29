@@ -8,7 +8,7 @@ def call(Map pipelineParams)
     env.REPO = pipelineParams.REPO
     env.REGISTRY = pipelineParams.REGISTRY
     pipeline {
-        node(){
+        node("master"){
             stage("checkout SCM") 
             {
                 echo 'Step to checkout the code from github'
