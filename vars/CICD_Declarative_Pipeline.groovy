@@ -27,11 +27,16 @@ def call(Map pipelineParams)
                 echo "push docker image to ECR-docker registry"
                 new pushImageDR().call(pipelineParams)
             }
+        }
+        node("Dev")
+        {
             stage ("deploy")
             {
                     echo "deploy war to tomcat app server"
                     sh """
-                      scp -i /etc/key.pem -r /root/.jenkins/workspace/pipeline_pocs/first_pippeline/webapp/target/*.war ec2-user@65.0.4.77:/app/apache-tomcat-9.0.56/webapps
+                      #scp -i /etc/key.pem -r /root/.jenkins/workspace/pipeline_pocs/first_pippeline/webapp/target/*.war ec2-user@65.0.4.77:/app/apache-tomcat-9.0.56/webapps
+                    docker pull ${REGISTRY}:v1.0
+                    docker build -t hello-world-image .
                     """
 
             }
