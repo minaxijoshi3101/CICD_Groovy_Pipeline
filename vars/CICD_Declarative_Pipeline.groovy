@@ -39,7 +39,7 @@ def call(Map pipelineParams)
                     $LOGIN
                     docker pull ${REGISTRY}:v1.0
                     docker rm -f hello-world-container | error=true
-                    docker run -d -p 5000:5000 --name hello-world-container ${REGISTRY}:v1.0 
+                    docker run -d -p 5000:8080 --name hello-world-container ${REGISTRY}:v1.0 
                     '''
             }
 
