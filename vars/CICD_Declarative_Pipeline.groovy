@@ -35,8 +35,11 @@ def call(Map pipelineParams)
                     echo "deploy war to tomcat app server"
                     sh """
                       #scp -i /etc/key.pem -r /root/.jenkins/workspace/pipeline_pocs/first_pippeline/webapp/target/*.war ec2-user@65.0.4.77:/app/apache-tomcat-9.0.56/webapps
+                    LOGIN=$(aws ecr get-login --no-include-email --region ap-south-1)
+                    $LOGIN
                     docker pull ${REGISTRY}:v1.0
-                    docker build -t hello-world-image .
+                    docker rm -f hello-world-container | error=true
+                    docker run -d -p 5000:5000 --name hello-world-container ${REGISTRY}:v1.0 
                     """
 
             }
