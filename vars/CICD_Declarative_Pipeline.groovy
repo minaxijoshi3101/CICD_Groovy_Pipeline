@@ -16,7 +16,15 @@ def call(Map pipelineParams)
                 cd $WORKSPACE
                 """
                 new checkoutSCM().call(pipelineParams)
-            }       
+            }    
+            stage("static code anlysis")
+            {
+                echo 'step to analyse the code'
+                sh'''
+                withSonarQubeEnv(sonarqube)
+                mvn sonar:sonar
+                '''
+            }
            stage ('build code and create docker image') 
             {    
                     echo "build a java code using mvn"
