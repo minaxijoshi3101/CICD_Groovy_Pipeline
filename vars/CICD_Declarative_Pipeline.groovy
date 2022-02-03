@@ -20,11 +20,12 @@ def call(Map pipelineParams)
             stage("static code anlysis")
             {
                 echo 'step to analyse the code'
-               
+               withSonarQubeEnv('sonarqube')
+                {
                 sh'''
-                withSonarQubeEnv('sonarqube')
                 mvn sonar:sonar
                 '''
+                }
             }
            stage ('build code and create docker image') 
             {    
