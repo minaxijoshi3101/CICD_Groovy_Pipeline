@@ -19,10 +19,13 @@ def call(Map pipelineParams)
             }    
             stage("static code anlysis")
             {
-                echo 'step to analyse the code'
+               echo 'step to analyse the code'
                withSonarQubeEnv('sonarqube')
                 {
                 sh'''
+                echo "pwd is"$PWD
+                cd $REPO
+                echo "pwd is after repo "$PWD
                 mvn sonar:sonar
                 '''
                 }
