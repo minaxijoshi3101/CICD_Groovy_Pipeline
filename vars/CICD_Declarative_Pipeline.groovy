@@ -47,6 +47,7 @@ def call(Map pipelineParams)
             {
                     echo "deploy war to tomcat app server"
                     sh '''
+                    #agents are installed in different env, we pull images there
                     #scp -i /etc/key.pem -r /root/.jenkins/workspace/pipeline_pocs/first_pippeline/webapp/target/*.war ec2-user@65.0.4.77:/app/apache-tomcat-9.0.56/webapps
                     LOGIN=$(aws ecr get-login --no-include-email --region ap-south-1)
                     $LOGIN
